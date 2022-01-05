@@ -78,7 +78,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: '#/components/schemas/Error'
         '500':
           description: Unexpected error
   '/terms/{id}':
@@ -136,7 +136,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetails'
+                $ref: '#/components/schemas/Error'
         '404':
           description: Term not found
           content: {}
@@ -192,8 +192,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Term'
-    ErrorDetails:
+    Error:
       type: object
+      required:
+        - code
+        - message
       properties:
         code:
           type: integer
