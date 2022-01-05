@@ -1,2 +1,2 @@
-# thesaurus
+# Thesaurus
 Thesaurus rest-service
